@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="content"
+            type="com.sevenpeakssoftware.mitul.domain.Content" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleType="centerCrop"
+            app:imageUrl="@{content.image}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/gradian"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+        <TextView
+            android:id="@+id/tvDateTime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_light_white"
+            android:textSize="@dimen/text_medium"
+            android:text="@{content.dateTime}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tvDescription"
+            android:layout_marginBottom="@dimen/bottom_margin"
+            android:layout_marginLeft="@dimen/vartical_margin"
+            android:layout_marginStart="@dimen/vartical_margin"
+            android:layout_marginRight="@dimen/vartical_margin"
+            android:layout_marginEnd="@dimen/vartical_margin"/>
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/text_heading"
+            android:text="@{content.title}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/tvDateTime"
+            android:layout_marginBottom="@dimen/bottom_margin"
+            android:layout_marginLeft="@dimen/vartical_margin"
+            android:layout_marginStart="@dimen/vartical_margin"
+            android:layout_marginRight="@dimen/vartical_margin"
+            android:layout_marginEnd="@dimen/vartical_margin"/>
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/color_white"
+            android:textSize="@dimen/text_medium"
+            android:text="@{content.ingress}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginBottom="@dimen/bottom_margin"
+            android:layout_marginLeft="@dimen/vartical_margin"
+            android:layout_marginStart="@dimen/vartical_margin"
+            android:layout_marginRight="@dimen/vartical_margin"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
